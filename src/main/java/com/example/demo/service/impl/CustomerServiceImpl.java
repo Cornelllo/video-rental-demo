@@ -117,7 +117,7 @@ public CustomerListDTO updateCustomer(Long customerId, CustomerUpdateDTO custome
 }
 
     //helper functions
-    private CustomerListDTO convertToDTO(Customer customer) {
+    CustomerListDTO convertToDTO(Customer customer) {
         return new CustomerListDTO(
             customer.getCustomerId(),
             customer.getCustomerName(),
@@ -128,7 +128,7 @@ public CustomerListDTO updateCustomer(Long customerId, CustomerUpdateDTO custome
         );
     }
     
-    private void validateCustomerAge(LocalDate birthdate) {
+    public void validateCustomerAge(LocalDate birthdate) {
         if (birthdate == null) {
             throw new BusinessException("Birthdate is required");
         }
