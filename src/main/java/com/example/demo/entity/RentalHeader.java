@@ -43,6 +43,7 @@ public class RentalHeader {
     private LocalDateTime modifiedDate;
     
     @OneToMany(mappedBy = "rentalHeader", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @Builder.Default
     private List<RentalDetail> rentalDetails = new ArrayList<>();
     
     public void addRentalDetail(RentalDetail rentalDetail) {

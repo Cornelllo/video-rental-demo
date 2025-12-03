@@ -29,6 +29,7 @@ public class Customer {
     private String customerName;
     
     @Column(name = "IsSubscribedToNewsletter", nullable = false)
+     @Builder.Default
     private Boolean isSubscribedToNewsletter = false;
     
     @Column(name = "Birthdate", nullable = false)

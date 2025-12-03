@@ -42,10 +42,12 @@ public class Movie {
     
     @Column(name = "NumberInStock", nullable = false)
     @ColumnDefault("0")
+    @Builder.Default
     private Integer numberInStock = 0;
     
     @Column(name = "NumberAvailable", nullable = false)
     @ColumnDefault("0")
+    @Builder.Default
     private Integer numberAvailable = 0;
     
     @CreationTimestamp
