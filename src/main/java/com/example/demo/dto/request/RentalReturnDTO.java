@@ -1,9 +1,7 @@
 package com.example.demo.dto.request;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -12,10 +10,8 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class RentalRequestDTO {
+public class RentalReturnDTO {
     
     @NotNull(message = "Customer ID is required")
     private Long customerId;
@@ -23,11 +19,6 @@ public class RentalRequestDTO {
     @NotEmpty(message = "At least one movie must be selected")
     private List<Long> movieIds;
     
-    private LocalDate dateRented;
+    private LocalDate dateRented; // Optional, defaults to today
     
-    public RentalRequestDTO(Long customerId, List<Long> movieIds) {
-        this.customerId = customerId;
-        this.movieIds = movieIds;
-        this.dateRented = LocalDate.now();
-    }
 }

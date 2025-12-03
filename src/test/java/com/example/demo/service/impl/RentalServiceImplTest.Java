@@ -29,7 +29,7 @@ import static org.mockito.BDDMockito.*;
 import static org.mockito.Mockito.never;
 
 @ExtendWith(MockitoExtension.class)
-class RentalServiceImplTest {
+public class RentalServiceImplTest {
 
     @Mock
     private RentalHeaderRepository rentalHeaderRepository;

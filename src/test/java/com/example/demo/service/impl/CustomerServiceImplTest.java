@@ -28,7 +28,7 @@ import static org.mockito.BDDMockito.*;
 import static org.mockito.Mockito.never;
 
 @ExtendWith(MockitoExtension.class)
-class CustomerServiceImplTest {
+public class CustomerServiceImplTest {
 
     @Mock
     private CustomerRepository customerRepository;

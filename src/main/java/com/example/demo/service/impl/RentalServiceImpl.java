@@ -46,7 +46,7 @@ public class RentalServiceImpl implements RentalService {
     }
 
       //method to convert RentalHeader to RentalDetailDTO
-    private RentalListDTO convertToRentalListDTO(RentalHeader rentalHeader) {
+    RentalListDTO convertToRentalListDTO(RentalHeader rentalHeader) {
         String customerName = rentalHeader.getCustomer() != null 
             ? rentalHeader.getCustomer().getCustomerName() 
             : "Unknown";
@@ -65,7 +65,7 @@ public class RentalServiceImpl implements RentalService {
     }
 
      //method to convert RentalDetail to RentalItemDTO
-    private RentalItemDTO convertToRentalItemDTO(RentalDetail rentalDetail) {
+    RentalItemDTO convertToRentalItemDTO(RentalDetail rentalDetail) {
         String movieName = rentalDetail.getMovie() != null 
             ? rentalDetail.getMovie().getMovieName() 
             : "Unknown";
@@ -117,7 +117,7 @@ public class RentalServiceImpl implements RentalService {
         return buildRentalResponse(rentalHeader, rentDetails);
     }
 
-    private RentalHeader createRentalHeader(Customer customer, LocalDate dateRented) {
+    RentalHeader createRentalHeader(Customer customer, LocalDate dateRented) {
         RentalHeader rentalHeader = new RentalHeader();
         rentalHeader.setCustomer(customer);
         rentalHeader.setDateRented(dateRented != null ? dateRented : LocalDate.now());
@@ -126,7 +126,7 @@ public class RentalServiceImpl implements RentalService {
         return rentalHeader;
     }
 
-    private List<Movie> validateAndFetchMovies(List<Long> movieIds) {
+    List<Movie> validateAndFetchMovies(List<Long> movieIds) {
         List<Movie> movies = new ArrayList<>();
         
         for (Long movieId : movieIds) {
