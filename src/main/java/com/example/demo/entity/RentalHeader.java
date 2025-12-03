@@ -1,7 +1,11 @@
 package com.example.demo.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -13,6 +17,9 @@ import java.util.List;
 @Entity
 @Table(name = "RentalHeader")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class RentalHeader {
     
     @Id
